@@ -1,0 +1,146 @@
+Got it 👍 — you want **simple commands to run ONLY IF something is not installed**.
+
+Here is the **clean “if not present → install” checklist** 👇
+
+---
+
+# ✅ 1. Git
+
+```bash
+git --version
+```
+
+❌ If error:
+
+```bash
+winget install --id Git.Git -e --source winget
+```
+
+---
+
+# ✅ 2. Python + pip
+
+```bash
+python --version
+pip --version
+```
+
+❌ If error:
+
+```bash
+winget install Python.Python.3.11
+```
+
+---
+
+# ✅ 3. Flask
+
+```bash
+pip show flask
+```
+
+❌ If not found:
+
+```bash
+pip install flask
+```
+
+---
+
+# ✅ 4. Docker
+
+```bash
+docker --version
+```
+
+❌ If error:
+
+```bash
+winget install Docker.DockerDesktop
+```
+
+👉 After install → restart system
+👉 Then run:
+
+```bash
+docker run hello-world
+```
+
+---
+
+# ✅ 5. Jenkins (no install needed separately)
+
+Just run:
+
+```bash
+docker run -d --name jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+```
+
+---
+
+# ✅ 6. kubectl
+
+```bash
+kubectl version --client
+```
+
+❌ If error:
+
+```bash
+winget install -e --id Kubernetes.kubectl
+```
+
+---
+
+# ✅ 7. Minikube
+
+```bash
+minikube version
+```
+
+❌ If error:
+
+```bash
+winget install -e --id Kubernetes.minikube
+```
+
+---
+
+# ✅ 8. pytest (for testing)
+
+```bash
+pip show pytest
+```
+
+❌ If not found:
+
+```bash
+pip install pytest
+```
+
+---
+
+# 🔥 Final quick check (run all)
+
+```bash
+git --version
+python --version
+pip --version
+docker --version
+kubectl version --client
+minikube version
+```
+
+---
+
+# 🎯 One-line idea (for viva)
+
+👉 “First check using version command; if not present, install using winget or pip.”
+
+---
+
+If you want, I can give:
+✅ Single command script to install everything
+✅ Fix for any error you get
+
+Just tell 👍
